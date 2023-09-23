@@ -4,7 +4,7 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { noteContext } from "../../../context/notes/noteContext";
 
 function NoteItem(props) {
-  const { value, updateNote } = props;
+  const { value, updateNote, showAlert } = props;
   const context = useContext(noteContext);
   const { deleteNote } = context;
 
@@ -21,7 +21,12 @@ function NoteItem(props) {
                 className="mx-2 text-end"
                 style={{ cursor: "pointer" }}
                 icon={faTrash}
-                onClick={() => deleteNote(value._id)}
+                onClick={() =>
+                  deleteNote(
+                    value._id,
+                    showAlert("Deleted Succefully", "success")
+                  )
+                }
               />
 
               <FontAwesomeIcon

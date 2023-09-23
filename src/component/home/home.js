@@ -1,12 +1,13 @@
 import React from "react";
 import Notes from "../notes/notes";
 
-function Home() {
+function Home(props) {
+  const { showAlert } = props;
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <Notes />
+          <Notes showAlert={showAlert} />
         </div>
       </div>
     </div>

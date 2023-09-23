@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (props) => {
   const [sign, setSign] = useState({
     name: "",
     email: "",
@@ -24,9 +24,9 @@ const Signup = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: sign.name,
-        email: sign.email,
-        password: sign.password,
+        name: name,
+        email: email,
+        password: password,
       }),
     });
     const json = await response.json();
@@ -35,8 +35,9 @@ const Signup = () => {
       // Save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
       history("/");
+      props.showAlert("Account Created Successfully", "success");
     } else {
-      alert("Invalid Credentials");
+      props.showAlert("Invalid Credential", "danger");
     }
   };
 
