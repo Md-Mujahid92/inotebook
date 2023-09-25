@@ -7,7 +7,7 @@ import UpdateNoteCom from "../updateNote/updateNote";
 function Notes(props) {
   const context = useContext(noteContext);
   const { notes, getNote } = context;
-  const ref = useRef(null);
+  const ref = useRef();
   const [note, setNote] = useState({
     id: " ",
     etitle: "",
@@ -21,7 +21,9 @@ function Notes(props) {
   }, []);
 
   const updateNote = (note) => {
-    ref.current.click();
+    if (ref.current) {
+      ref.current.click();
+    }
     setNote({
       id: note._id,
       etitle: note.title,
@@ -38,18 +40,8 @@ function Notes(props) {
     <div className="col-12">
       <AddNote showAlert={props.showAlert} />
 
-      <button
-        type="button"
-        className="btn btn-primary d-none"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        ref={ref}
-      >
-        Launch demo modal
-      </button>
       <UpdateNoteCom
         ref={ref}
-        ref1={ref.current.click()}
         showAlert={props.showAlert}
         note={note}
         onChange={onChange}

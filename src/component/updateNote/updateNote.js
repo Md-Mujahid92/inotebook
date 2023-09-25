@@ -1,10 +1,10 @@
-import React, { useContext, useRef } from "react";
+import React, { forwardRef, useContext, useRef } from "react";
 import { noteContext } from "../../context/notes/noteContext";
 
-const UpdateNoteCom = (props) => {
+const UpdateNoteCom = forwardRef((props, ref) => {
   const context = useContext(noteContext);
   const { editNote } = context;
-  const { ref, note, onChange } = props;
+  const { note, onChange } = props;
   const refClose = useRef(null);
 
   const handleClick = (e) => {
@@ -120,6 +120,6 @@ const UpdateNoteCom = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default UpdateNoteCom;
