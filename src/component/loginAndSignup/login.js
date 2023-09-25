@@ -20,11 +20,13 @@ const Login = (props) => {
       body: JSON.stringify({ email: log.email, password: log.password }),
     });
     const json = await response.json();
+    console.log("API Response:", json);
     if (json.success) {
       // Save the auth token and redirect
-      localStorage.setItem("token", json.authtoken);
-      history("/");
+      localStorage.setItem("token", json.authToken);
+      console.log("Token saved:", localStorage.getItem("token"));
       props.showAlert("Logged In Successfully", "success");
+      history("/");
     } else {
       props.showAlert("Invalid Credential", "danger");
     }
