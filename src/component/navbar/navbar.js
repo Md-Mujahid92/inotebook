@@ -62,7 +62,7 @@ function Navbar() {
             </Link>
           </form>
         ) : (
-          <button className="btn btn-primary mx-1" onClick={handleLogout}>
+          <button className="btn btn-primary" onClick={handleLogout}>
             Logout
           </button>
         )}
