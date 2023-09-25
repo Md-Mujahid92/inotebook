@@ -5,7 +5,7 @@ import AddNote from "../addNote/addNote";
 import UpdateNoteCom from "../updateNote/updateNote";
 import { useNavigate } from "react-router-dom";
 
-function  Notes(props) {
+function Notes(props) {
   const context = useContext(noteContext);
   const { notes, getNote } = context;
   const ref = useRef();

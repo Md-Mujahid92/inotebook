@@ -9,12 +9,12 @@ const NoteState = (props) => {
   // Get All Note
   const getNote = async () => {
     //api call
-    const response = await fetch(`${host}/api/notes/fetchalluser`, {
+    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwODFhZjBkYmQxZmFmYmUzMTBlNTdkIn0sImlhdCI6MTY5NTAzNjAwN30.-zq2oLQ_zW44cUgqOmCKZW33lFsVn49WCwhXzEIRdJk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxMTM5OWEyOTJmZDY4ODExY2I1NGZlIn0sImlhdCI6MTY5NTYyNzY3NH0.iGWmZDpgFc71tYsVLiwDqHPmnP1tVW9-N5R7L3QLEUQ",
       },
     });
     const json = await response.json();
@@ -29,7 +29,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwODFhZjBkYmQxZmFmYmUzMTBlNTdkIn0sImlhdCI6MTY5NTAzNjAwN30.-zq2oLQ_zW44cUgqOmCKZW33lFsVn49WCwhXzEIRdJk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxMTM5OWEyOTJmZDY4ODExY2I1NGZlIn0sImlhdCI6MTY5NTYyNzY3NH0.iGWmZDpgFc71tYsVLiwDqHPmnP1tVW9-N5R7L3QLEUQ",
       },
       body: JSON.stringify({ title, description, tag }),
     });
@@ -46,7 +46,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwODFhZjBkYmQxZmFmYmUzMTBlNTdkIn0sImlhdCI6MTY5NTAzNjAwN30.-zq2oLQ_zW44cUgqOmCKZW33lFsVn49WCwhXzEIRdJk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxMTM5OWEyOTJmZDY4ODExY2I1NGZlIn0sImlhdCI6MTY5NTYyNzY3NH0.iGWmZDpgFc71tYsVLiwDqHPmnP1tVW9-N5R7L3QLEUQ",
       },
     });
     const json = await response.json();
@@ -66,7 +66,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwODFhZjBkYmQxZmFmYmUzMTBlNTdkIn0sImlhdCI6MTY5NTAzNjAwN30.-zq2oLQ_zW44cUgqOmCKZW33lFsVn49WCwhXzEIRdJk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUxMTM5OWEyOTJmZDY4ODExY2I1NGZlIn0sImlhdCI6MTY5NTYyNzY3NH0.iGWmZDpgFc71tYsVLiwDqHPmnP1tVW9-N5R7L3QLEUQ",
       },
       body: JSON.stringify({ title, description, tag }),
     });
